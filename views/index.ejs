@@ -1,0 +1,13 @@
+<%- include ('partials/header'); -%>
+
+<h1>Welcome To My BlogPost</h1>
+
+<%blogs.forEach(function (logs){%>
+<h1><%=logs.title %></h1>
+<img src="<%=logs.image%>">
+<p><%=logs.created%></p>
+<p><%= logs.body%></p>
+<a href="/blogs/<%= logs._id%>"><button>More Info</button></a>
+<%})%>
+
+<%- include ('partials/footer'); -%>

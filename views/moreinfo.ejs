@@ -1,0 +1,23 @@
+<%- include ('partials/header'); -%>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blogs.title %></div>
+    <div class="ui top attached ">
+        <div class="item">
+            <img class="ui rounded centered image" src="<%= blogs.image%>">
+            <div class="content">
+                <span><%= blogs.created.toDateString() %></span>
+            </div>
+            <div class="description">
+                <p><%=blogs.body %></p>
+            </div>
+            <a href="/blogs/<%= blogs._id%>/edit"><button class=" ui basic blue button"> EDIT</button></a>
+
+            <form action="/blogs/<%= blogs._id%>?_method=DELETE" method="POST" style="display: inline;">
+                <button class="ui red basic button">DELETE</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+<%- include ('partials/footer'); -%>
